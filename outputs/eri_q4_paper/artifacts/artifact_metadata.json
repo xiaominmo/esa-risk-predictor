@@ -1,0 +1,148 @@
+{
+  "target_col": "label_eri_q4_traincut",
+  "target_name": "ESA hyporesponsiveness (ERI top quartile phenotype)",
+  "eri_q75_train": 20.404519959432612,
+  "best_model_name": "RF",
+  "best_threshold": 0.4167461398099405,
+  "compact_threshold": 0.4889222063027493,
+  "risk_bands": {
+    "low_high_cut": 0.1846532723070517,
+    "mid_high_cut": 0.6218334244477277
+  },
+  "compact_risk_bands": {
+    "low_high_cut": 0.3927853304371229,
+    "mid_high_cut": 0.6360912517316739
+  },
+  "formal_features": [
+    "age",
+    "dialysis_vintage_months",
+    "hb_index",
+    "platelet_index",
+    "dry_weight_index",
+    "esa_dose_index",
+    "esa_dose_per_kg_index",
+    "eri_index",
+    "ferritin_index",
+    "tsat_index",
+    "albumin_index",
+    "crp_index",
+    "phosphorus_index",
+    "pth_index",
+    "spktv_index",
+    "urr_index",
+    "sbp_mean_index",
+    "dbp_mean_index",
+    "sex",
+    "primary_disease_group",
+    "access_type",
+    "esa_use_index",
+    "iron_use_index",
+    "hif_use_index",
+    "dialysis_frequency_index",
+    "hdf_index",
+    "hp_index",
+    "current_hyporesponse",
+    "iron_deficiency_index",
+    "low_albumin_index",
+    "inflammation_index",
+    "hypotension_any_index"
+  ],
+  "compact_features": [
+    "dry_weight_index",
+    "hb_index",
+    "age",
+    "sex",
+    "spktv_index",
+    "urr_index",
+    "albumin_index",
+    "dialysis_vintage_months"
+  ],
+  "feature_display": {
+    "age": "Age (years)",
+    "dialysis_vintage_months": "Dialysis vintage (months)",
+    "hb_index": "Hemoglobin (g/L)",
+    "platelet_index": "Platelet count",
+    "dry_weight_index": "Dry weight (kg)",
+    "esa_dose_index": "ESA dose (IU/week)",
+    "esa_dose_per_kg_index": "ESA dose per kg",
+    "eri_index": "Current-quarter ERI",
+    "ferritin_index": "Ferritin (ng/mL)",
+    "tsat_index": "TSAT (%)",
+    "albumin_index": "Albumin (g/L)",
+    "crp_index": "CRP (mg/L)",
+    "phosphorus_index": "Phosphorus (mmol/L)",
+    "pth_index": "PTH",
+    "spktv_index": "spKt/V",
+    "urr_index": "URR (%)",
+    "sbp_mean_index": "SBP (mmHg)",
+    "dbp_mean_index": "DBP (mmHg)",
+    "sex": "Sex",
+    "primary_disease_group": "Primary disease",
+    "access_type": "Vascular access",
+    "esa_use_index": "ESA use",
+    "iron_use_index": "Iron use",
+    "hif_use_index": "HIF use",
+    "dialysis_frequency_index": "Dialysis frequency",
+    "hdf_index": "HDF",
+    "hp_index": "HP",
+    "current_hyporesponse": "Current ESA hyporesponse",
+    "iron_deficiency_index": "Iron deficiency",
+    "low_albumin_index": "Low albumin",
+    "inflammation_index": "Inflammation",
+    "hypotension_any_index": "Intradialytic hypotension"
+  },
+  "compact_metrics": {
+    "train": {
+      "n": 3210,
+      "events": 803,
+      "event_rate": 0.2501557632398754,
+      "roc_auc": 0.8167015983373525,
+      "pr_auc": 0.6196962663266306,
+      "accuracy": 0.7401869158878505,
+      "f1": 0.593170731707317,
+      "sensitivity": 0.7571606475716065,
+      "specificity": 0.7345243041130037,
+      "ppv": 0.48757016840417,
+      "npv": 0.9006622516556292,
+      "brier": 0.17412056202782758,
+      "threshold": 0.4889222063027493
+    },
+    "valid": {
+      "n": 4686,
+      "events": 1340,
+      "event_rate": 0.2859581732821169,
+      "roc_auc": 0.7862397516303717,
+      "pr_auc": 0.6214211610712248,
+      "accuracy": 0.7262057191634657,
+      "f1": 0.5951404228463237,
+      "sensitivity": 0.7037313432835821,
+      "specificity": 0.7352062163777645,
+      "ppv": 0.5155822854018589,
+      "npv": 0.8610430521526077,
+      "brier": 0.18183238067219232,
+      "threshold": 0.4889222063027493
+    }
+  },
+  "dependence_plots": [
+    {
+      "feature": "Current-quarter ERI",
+      "path": "D:\\博士科研\\codex1\\outputs\\eri_q4_paper\\figures\\figure_shap_dependence_1_Current-quarter_ERI.png"
+    },
+    {
+      "feature": "ESA dose per kg",
+      "path": "D:\\博士科研\\codex1\\outputs\\eri_q4_paper\\figures\\figure_shap_dependence_2_ESA_dose_per_kg.png"
+    },
+    {
+      "feature": "ESA dose (IU/week)",
+      "path": "D:\\博士科研\\codex1\\outputs\\eri_q4_paper\\figures\\figure_shap_dependence_3_ESA_dose_(IU_week).png"
+    },
+    {
+      "feature": "Dry weight (kg)",
+      "path": "D:\\博士科研\\codex1\\outputs\\eri_q4_paper\\figures\\figure_shap_dependence_4_Dry_weight_(kg).png"
+    },
+    {
+      "feature": "Hemoglobin (g/L)",
+      "path": "D:\\博士科研\\codex1\\outputs\\eri_q4_paper\\figures\\figure_shap_dependence_5_Hemoglobin_(g_L).png"
+    }
+  ]
+}
