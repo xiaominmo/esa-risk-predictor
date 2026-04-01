@@ -16,6 +16,7 @@ COMPACT_MODEL = joblib.load(ARTIFACT_DIR / "compact_model.joblib")
 FEATURE_DISPLAY = META["feature_display"]
 FORMAL_FEATURES = META["formal_features"]
 COMPACT_FEATURES = META["compact_features"]
+SEX_TO_MODEL = {"Male": "男", "Female": "女"}
 
 DISPLAY_LABEL_OVERRIDES = {
     "current_hyporesponse": "Current-quarter ESA hyporesponse",
@@ -77,7 +78,7 @@ def compact_inputs():
         model_payload["age"] = value
         display_payload["age"] = value
 
-        model_value, display_value = select_mapped_option("Sex", {"Male": "男", "Female": "女"}, key="compact_sex")
+        model_value, display_value = select_mapped_option("Sex", SEX_TO_MODEL, key="compact_sex")
         model_payload["sex"] = model_value
         display_payload["sex"] = display_value
 
@@ -115,7 +116,7 @@ def formal_inputs():
         model_payload["age"] = value
         display_payload["age"] = value
 
-        model_value, display_value = select_mapped_option("Sex", {"Male": "男", "Female": "女"}, key="f_sex")
+        model_value, display_value = select_mapped_option("Sex", SEX_TO_MODEL, key="f_sex")
         model_payload["sex"] = model_value
         display_payload["sex"] = display_value
 
@@ -300,8 +301,9 @@ def main():
     st.title("Next-Quarter ESA Resistance Risk Predictor")
     st.caption(
         f"The primary outcome was defined as entry into the top quartile of ERI in the subsequent quarter "
-        f"(training-set Q75 = {META['eri_q75_train']:.4f}). The primary model was {META['best_model_name']}, "
-        "with both compact and full calculators provided for academic and clinical presentation."
+        f"(training-set Q75 = {META['eri_q75_train']:.4f}). The full calculator is based on the primary "
+        "random forest model, whereas the compact calculator is based on a logistic regression model using "
+        "8 routinely available variables."
     )
 
     tab1, tab2 = st.tabs(["Compact Calculator", "Full Calculator"])
