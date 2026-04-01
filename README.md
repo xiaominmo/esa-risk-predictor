@@ -1,42 +1,31 @@
 # ESA Resistance Risk Predictor
 
-这是一个基于 Streamlit 的 ESA 抵抗风险预测应用，入口文件是 `eri_q4_streamlit_app.py`。
+This repository contains Streamlit-based web calculators for predicting the risk of next-quarter ESA resistance.
 
-## 本地运行
+## Available apps
+
+- `eri_q4_streamlit_app.py`: legacy app entry point
+- `eri_q4_streamlit_app_en.py`: English academic-style app with compact and full calculators
+
+## Local run
 
 ```bash
 pip install -r requirements.txt
-streamlit run eri_q4_streamlit_app.py
+streamlit run eri_q4_streamlit_app_en.py
 ```
 
-## 固定线上部署
+## Deployment
 
-推荐使用 Streamlit Community Cloud，部署后会得到一个长期稳定的 `https://<your-app>.streamlit.app` 链接。
+The project can be deployed on Streamlit Community Cloud.
 
-### 1. 上传到 GitHub
+1. Push the repository to GitHub.
+2. Open https://share.streamlit.io/
+3. Select the repository.
+4. Set the main file path to `eri_q4_streamlit_app_en.py` for the English version.
+5. Click `Deploy`.
 
-- 新建一个 GitHub 仓库
-- 把本项目上传到仓库
-- 确认以下文件已经在仓库中：
-  - `eri_q4_streamlit_app.py`
-  - `requirements.txt`
-  - `outputs/eri_q4_paper/artifacts/`
-
-### 2. 在 Streamlit Community Cloud 部署
-
-- 打开 https://share.streamlit.io/
-- 用 GitHub 账号登录
-- 选择你的仓库
-- Main file path 填 `eri_q4_streamlit_app.py`
-- 点击 Deploy
-
-### 3. 部署完成后
-
-- 平台会分配一个固定网址
-- 以后只要 GitHub 仓库还在、应用未被手动删除，这个网址通常会保持不变
-
-## 自动化测试
+## Automated tests
 
 ```bash
-python -m pytest tests/test_streamlit_prediction_e2e.py -q
+python -m pytest tests/test_streamlit_prediction_e2e_en.py -q
 ```
